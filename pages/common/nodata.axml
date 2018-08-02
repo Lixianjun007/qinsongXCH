@@ -1,0 +1,18 @@
+<template name="nodata">
+  <!-- 1 加载中 -->
+  <view a:if="{{status == 1}}" class="nodata nodata-loding pd-t-10 pd-b-10 tc">
+    <view class="cr-666 fs-12">加载中 loading...</view>
+  </view>
+
+  <!-- 2 处理错误 -->
+  <view a:elif="{{status == 2}}" class="nodata pd-t-10 pd-b-10 tc">
+    <image class="block m-auto" mode="aspectFill" src="/images/default-error.png" />
+    <text class="cr-999 fs-12">{{msg || '处理错误 error'}}</text>
+  </view>
+
+  <!-- 0 默认没有数据 -->
+  <view a:else class="nodata pd-t-10 pd-b-10 tc">
+    <image class="block m-auto" mode="aspectFill" src="/images/default-empty.png" />
+    <text class="cr-999 fs-12">{{msg || '没有数据 no data'}}</text>
+  </view>
+</template>

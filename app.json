@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/myorder/myorder",
+    "pages/paytips/paytips",
+    "pages/agreement/agreement"
+  ],
+  "window": {
+    "titleBarColor": "#000",
+    "defaultTitle": "琴松货运代理"
+  },
+  "tabBar": {
+    "textColor": "#8a8a8a",
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "/images/nav-icon-home.png",
+        "activeIcon": "/images/nav-icon-home-active.png",
+        "name": "首页 Home"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "icon": "/images/nav-icon-user.png",
+        "activeIcon": "/images/nav-icon-user-active.png",
+        "name": "我的 My"
+      }
+    ]
+  }
+}

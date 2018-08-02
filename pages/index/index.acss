@@ -1,0 +1,18 @@
+.base .title { width: 85px; }
+.base .content { width: calc(100% - 85px); }
+.nav { line-height: 38px; }
+.nav .submit-price { width: 65%; }
+.nav .form-submit { width: 35%; border-radius: 0px; border: 0px; }
+
+.courier-view { position: fixed; bottom: 0; left: 0; height: 100vh; width: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 100; }
+.courier-view .content-box { position: absolute; width: 100%; height: 60vh; bottom: 0; }
+.courier-view .close-icon { width: 20px; height: 20px; }
+.courier-nav view { width: 50%; }
+.switch button { width: 50%; border: 0px; border-radius: 0px; height: 38px; line-height: 38px; }
+.switch-active { border-bottom: 2px solid #000 !important; color: #000; }
+.courier-item { border-style: none none dashed none; }
+.courier-item-remover { width: 20px; height: 20px; margin-top: -20px; }
+.goods-list .item { float: left; width: 33%; }
+.goods-list .item .submit { width: 88px; }
+.goods-other input { width: calc(100% - 122px); }
+.courier-active { background: #eee; border-color: #eaeaea; }

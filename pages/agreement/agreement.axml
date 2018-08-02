@@ -1,0 +1,56 @@
+<view class="bg-fff pd-l-5 pd-r-5 pd-t-10 pd-b-10">
+  <view class="fs-14 cr-333 m-b-10">授权协议（Registration Policy）</view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>我们特此确认我们已经授权委托诺唯真喜悦号邮轮方面基于我们（物主）所提供的货品信息统一地向中国海关进行申报的权利。</view>
+    <view>We are here to confirm that we authorized 'Norwegian Joy' ship team to substantially declare my personal parcels to China Custom authority based on the commodity information provided by us, owner of the materials.</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>我们确认船员物品（包裹）的清关仅限于出境包裹，所有入境物品的申报须有船员自己完成。</view>
+    <view>We confirm crew effects parcels' custom clearance declaration only apply to exports（uploading), all import materials(offloading) is subject to be declared by crew member him/herself.</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>我们确认将严格遵守海关的各项法规和政策，我们已经清晰的知晓了限制出境类目名单（见附件A）。</view>
+    <view>We confirm to adhere to Custom regulation and stipulation, we are fully aware of the outbound prehibited material manifest (appendix  A).</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-10">
+    <view>附件A：限制出境物品</view>
+    <view>Appendix A: Articles Restricted From Exportation</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（一）金银等贵重金属及其制品；</view>
+    <view>i. Gold, silver, precious metals and ornaments made thereof;</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（二）国家货币；</view>
+    <view>ⅱ. State currencies;</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（三）外币及其有价证券；</view>
+    <view>ⅲ. Foreign currencies and valuable securities;</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（四）无线电收发信机、通信保密机；</view>
+    <view>ⅳ. Radio transmitter and communication security machines;</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（五）贵重中药材；</view>
+    <view>ⅴ. Valuable Chinese medicinal materials;</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（六）一般文物；</view>
+    <view>ⅵ. Ordinary cultural relics;</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（七）海关限制出境的其它物品；</view>
+    <view>ⅶ. Other articles restricted from exportation by Customs;</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（八）丢失包裹赔偿：3倍运费返还至你的支付宝。</view>
+    <view>ⅷ. Loss Parcel compensation: Triple delivery fee return back your Alipay account.</view>
+  </view>
+  <view class="fs-12 cr-666 m-t-5">
+    <view>（九）拒收任何危险包裹；</view>
+    <view>ⅸ. Reject any dangerous parcel;</view>
+    <image src="/images/dangerous.jpg" mode="scaleToFill" class="logo" />
+  </view>
+</view>

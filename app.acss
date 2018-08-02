@@ -1,0 +1,276 @@
+.m-t-1 { margin-top: 1px; }
+.m-t-2 { margin-top: 2px; }
+.m-t-3 { margin-top: 3px; }
+.m-t-4 { margin-top: 4px; }
+.m-t-5 { margin-top: 5px; }
+.m-t-6 { margin-top: 6px; }
+.m-t-7 { margin-top: 7px; }
+.m-t-8 { margin-top: 8px; }
+.m-t-9 { margin-top: 9px; }
+.m-t-10 { margin-top: 10px; }
+.m-t-11 { margin-top: 11px; }
+.m-t-12 { margin-top: 12px; }
+.m-t-13 { margin-top: 13px; }
+.m-t-14 { margin-top: 14px; }
+.m-t-15 { margin-top: 15px; }
+
+.m-r-1 { margin-right: 1px; }
+.m-r-2 { margin-right: 2px; }
+.m-r-3 { margin-right: 3px; }
+.m-r-4 { margin-right: 4px; }
+.m-r-5 { margin-right: 5px; }
+.m-r-6 { margin-right: 6px; }
+.m-r-7 { margin-right: 7px; }
+.m-r-8 { margin-right: 8px; }
+.m-r-9 { margin-right: 9px; }
+.m-r-10 { margin-right: 10px; }
+.m-r-11 { margin-right: 11px; }
+.m-r-12 { margin-right: 12px; }
+.m-r-13 { margin-right: 13px; }
+.m-r-14 { margin-right: 14px; }
+.m-r-15 { margin-right: 15px; }
+
+.m-b-1 { margin-bottom: 1px; }
+.m-b-2 { margin-bottom: 2px; }
+.m-b-3 { margin-bottom: 3px; }
+.m-b-4 { margin-bottom: 4px; }
+.m-b-5 { margin-bottom: 5px; }
+.m-b-6 { margin-bottom: 6px; }
+.m-b-7 { margin-bottom: 7px; }
+.m-b-8 { margin-bottom: 8px; }
+.m-b-9 { margin-bottom: 9px; }
+.m-b-10 { margin-bottom: 10px; }
+.m-b-11 { margin-bottom: 11px; }
+.m-b-12 { margin-bottom: 12px; }
+.m-b-13 { margin-bottom: 13px; }
+.m-b-14 { margin-bottom: 14px; }
+.m-b-15 { margin-bottom: 15px; }
+
+.m-l-1 { margin-left: 1px; }
+.m-l-2 { margin-left: 2px; }
+.m-l-3 { margin-left: 3px; }
+.m-l-4 { margin-left: 4px; }
+.m-l-5 { margin-left: 5px; }
+.m-l-6 { margin-left: 6px; }
+.m-l-7 { margin-left: 7px; }
+.m-l-8 { margin-left: 8px; }
+.m-l-9 { margin-left: 9px; }
+.m-l-10 { margin-left: 10px; }
+.m-l-11 { margin-left: 11px; }
+.m-l-12 { margin-left: 12px; }
+.m-l-13 { margin-left: 13px; }
+.m-l-14 { margin-left: 14px; }
+.m-l-15 { margin-left: 15px; }
+
+
+.pd-0 { padding: 0px; }
+.pd-1 { padding: 1px; }
+.pd-2 { padding: 2px; }
+.pd-3 { padding: 3px; }
+.pd-4 { padding: 4px; }
+.pd-5 { padding: 5px; }
+.pd-6 { padding: 6px; }
+.pd-7 { padding: 7px; }
+.pd-8 { padding: 8px; }
+.pd-9 { padding: 9px; }
+.pd-10 { padding: 10px; }
+
+.pd-t-0 { padding-top: 0px; }
+.pd-t-1 { padding-top: 1px; }
+.pd-t-2 { padding-top: 2px; }
+.pd-t-3 { padding-top: 3px; }
+.pd-t-4 { padding-top: 4px; }
+.pd-t-5 { padding-top: 5px; }
+.pd-t-6 { padding-top: 6px; }
+.pd-t-7 { padding-top: 7px; }
+.pd-t-8 { padding-top: 8px; }
+.pd-t-9 { padding-top: 9px; }
+.pd-t-10 { padding-top: 10px; }
+.pd-t-11 { padding-top: 11px; }
+.pd-t-12 { padding-top: 12px; }
+.pd-t-13 { padding-top: 13px; }
+.pd-t-14 { padding-top: 14px; }
+.pd-t-15 { padding-top: 15px; }
+
+.pd-r-0 { padding-right: 0px; }
+.pd-r-1 { padding-right: 1px; }
+.pd-r-2 { padding-right: 2px; }
+.pd-r-3 { padding-right: 3px; }
+.pd-r-4 { padding-right: 4px; }
+.pd-r-5 { padding-right: 5px; }
+.pd-r-6 { padding-right: 6px; }
+.pd-r-7 { padding-right: 7px; }
+.pd-r-8 { padding-right: 8px; }
+.pd-r-9 { padding-right: 9px; }
+.pd-r-10 { padding-right: 10px; }
+.pd-r-11 { padding-right: 11px; }
+.pd-r-12 { padding-right: 12px; }
+.pd-r-13 { padding-right: 13px; }
+.pd-r-14 { padding-right: 14px; }
+.pd-r-15 { padding-right: 15px; }
+
+.pd-b-0 { padding-bottom: 0px; }
+.pd-b-1 { padding-bottom: 1px; }
+.pd-b-2 { padding-bottom: 2px; }
+.pd-b-3 { padding-bottom: 3px; }
+.pd-b-4 { padding-bottom: 4px; }
+.pd-b-5 { padding-bottom: 5px; }
+.pd-b-6 { padding-bottom: 6px; }
+.pd-b-7 { padding-bottom: 7px; }
+.pd-b-8 { padding-bottom: 8px; }
+.pd-b-9 { padding-bottom: 9px; }
+.pd-b-10 { padding-bottom: 10px; }
+.pd-b-11 { padding-bottom: 11px; }
+.pd-b-12 { padding-bottom: 12px; }
+.pd-b-13 { padding-bottom: 13px; }
+.pd-b-14 { padding-bottom: 14px; }
+.pd-b-15 { padding-bottom: 15px; }
+
+.pd-l-0 { padding-left: 0px; }
+.pd-l-1 { padding-left: 1px; }
+.pd-l-2 { padding-left: 2px; }
+.pd-l-3 { padding-left: 3px; }
+.pd-l-4 { padding-left: 4px; }
+.pd-l-5 { padding-left: 5px; }
+.pd-l-6 { padding-left: 6px; }
+.pd-l-7 { padding-left: 7px; }
+.pd-l-8 { padding-left: 8px; }
+.pd-l-9 { padding-left: 9px; }
+.pd-l-10 { padding-left: 10px; }
+.pd-l-11 { padding-left: 11px; }
+.pd-l-12 { padding-left: 12px; }
+.pd-l-13 { padding-left: 13px; }
+.pd-l-14 { padding-left: 14px; }
+.pd-l-15 { padding-left: 15px; }
+
+
+.fw-100 { font-weight: 100; }
+.fw-200 { font-weight: 200; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-700 { font-weight: 700; }
+
+.fs-8 { font-size: 8px; }
+.fs-10 { font-size: 10px; }
+.fs-12 { font-size: 12px; }
+.fs-14 { font-size: 14px; }
+.fs-16 { font-size: 16px; }
+.fs-18 { font-size: 18px; }
+.fs-20 { font-size: 20px; }
+
+.o-h { overflow: hidden; }
+.o-il { overflow: initial; }
+
+.p-a { position: absolute; }
+.p-r { position: relative; }
+
+.bs-bx { box-sizing: border-box; }
+
+.m-auto { margin: auto; }
+
+.fl { float: left; }
+.fr { float: right; }
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.dy-wib { display: -webkit-inline-box; }
+.block { display: block; }
+.tc { text-align: center; }
+.tr { text-align: right; }
+.tl { text-align: left; }
+
+.cr-main { color: #000; }
+.cr-999 { color: #999; }
+.cr-eee { color: #eee; }
+.cr-ccc { color: #ccc; }
+.cr-666 { color: #666; }
+.cr-f40 { color: #f40; }
+.cr-f60 { color: #f60; }
+.cr-fff { color: #fff; }
+.cr-f00 { color: #f00; }
+.cr-333 { color: #333; }
+.cr-success { color: #4CAF50; }
+.cr-error { color: #f1bebe; }
+.cr-warning { color: #ffb482; }
+.cr-dodgerblue { color: #2196F3; }
+
+.bg-main { background-color: #000; }
+.bg-fff { background-color: #fff; }
+.bg-f40 { background-color: #f40; }
+.bg-eee { background-color: #e1e1e1; }
+
+.br-0 { border: 0px; }
+.br-main { border: 1px solid #000; }
+.br-warning { border: 1px solid #ffb482; }
+.br-yellow { border: 1px solid #fdc4bc; }
+.br-eee { border: 1px solid #e1e1e1; }
+.br-ccc { border: 1px solid #ccc; }
+.br-t-eee { border-top: 1px solid #e1e1e1; }
+.br-r-eee { border-right: 1px solid #e1e1e1; }
+.br-b-eee { border-bottom: 1px solid #e1e1e1; }
+.br-l-eee { border-left: 1px solid #e1e1e1; }
+.br-t-ccc { border-top: 1px solid #ccc; }
+.br-r-ccc { border-right: 1px solid #ccc; }
+.br-b-ccc { border-bottom: 1px solid #ccc; }
+.br-l-ccc { border-left: 1px solid #ccc; }
+
+.br-t-f6 { border-top: 1px solid #f6f6f6; }
+.br-r-f6 { border-right: 1px solid #f6f6f6; }
+.br-b-f6 { border-bottom: 1px solid #f6f6f6; }
+.br-l-f6 { border-left: 1px solid #f6f6f6; }
+
+.wh-auto { width: 100%; }
+.ht-auto { height: 100% }
+
+.br-radius { border-radius: 3px !important; }
+
+.l-h-14 { line-height: 14px; }
+.l-h-16 { line-height: 16px; }
+.l-h-18 { line-height: 18px; }
+.l-h-20 { line-height: 20px; }
+.l-h-22 { line-height: 22px; }
+.l-h-24 { line-height: 24px; }
+.l-h-26 { line-height: 26px; }
+.l-h-28 { line-height: 28px; }
+.l-h-30 { line-height: 30px; }
+.l-h-40 { line-height: 40px; }
+
+.ht-18 { height: 18px; }
+.ht-20 { height: 20px; }
+.ht-22 { height: 22px; }
+.ht-24 { height: 24px; }
+.ht-26 { height: 26px; }
+.ht-28 { height: 28px; }
+.ht-30 { height: 30px; }
+.ht-40 { height: 40px; }
+
+/*
+    框架样式覆盖
+*/
+.a-textarea-control textarea { font-size: 12px; }
+button { border-radius: 3px; }
+
+/*
+    公共样式
+*/
+page { background: #fafafa; }
+input[type="text"],
+input[type="number"],
+input[type="idcard"],
+input[type="digit"],
+textarea { -webkit-appearance: none; border-radius: 0px; }
+
+.drift { position: fixed; left: -1000px; }
+
+.nav-submit-fixed { background: #eee; height: 45px; position: fixed; bottom: 0; }
+
+.tips { background: #ffffe9 url('/images/tips.png') no-repeat 0px 4px; background-size: 12px 12px; color: #f7b240; border: 1px solid #faebd2; line-height: 13px; padding: 5px 3px 2px 15px; font-size: 10px; border-radius: 2px; display: block; }
+
+.text-omit { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+.nodata image { margin-top: 15px !important; }
+.nodata-loding image { background-size: inherit !important; }
+.data-loding image { width: 60px; height: 60px; background-size: 80% 80% !important; }
+
+.data-bottom-line { padding: 0 10% 10px 10%; }
+.data-bottom-line view { width: 33.3%; }
+
+.cut_head_icon { background-image: url('data:image/svg+xml;charset=utf-8,<svg width="16" height="26" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="UI-KIT_基础元件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="9.9基础元件" transform="translate(-5809.000000, -8482.000000)" fill="#C7C7CC"><polygon id="Disclosure-Indicator" points="5811 8482 5809 8484 5820.5 8495 5809 8506 5811 8508 5825 8495"></polygon></g></g></svg>'); background-size: 15px 10px; background-repeat: no-repeat; background-position: center right; }

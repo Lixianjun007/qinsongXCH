@@ -1,0 +1,26 @@
+<view class="oh pd-b-10">
+  <view class="tc user-hot pd-t-10 pd-b-10">
+    <image class="user-head" mode="scaleToFill" src="{{user_head_src}}" onTap="user_head_event" onError="user_head_image_error" />
+    <text class="block m-t-10 cr-fff fs-14">{{user.nick_name}}</text>
+  </view>
+  <view a:if="{{nav_items_list}}" class="list-items">
+    <block a:for="{{nav_items_list}}">
+      <view a:if="{{item.is_show == 1}}" class="item item-{{item.align || 'middle'}}" onTap="nav_item_event" data-value="{{item.value}}">
+        <view class="item-line {{item.textMode ? 'item-line-' + item.textMode : ''}}">
+            <image a:if="{{item.icon}}" class="item-icon" src="{{item.icon}}" mode="scaleToFill" />
+            <text class="item-content">{{item.title}}</text>
+            <view a:if="{{item.extra}}" class="item-extra">{{item.extra}}</view>
+            <view a:if="{{item.arrow}}" class="item-arrow item-arrow-{{item.arrow}}" />
+            <view a:if="{{index != (nav_items_list.length-1)}}" class="item-bottom" />
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="pd-l-5 pd-r-5">
+  <view class="tips">
+    <view>提交订单后，请注意物流状况，我们会在收到您的包裹后24小时内完成核实，届时即可进入订单支付开始邮寄。</view>
+    <view class="m-t-5">After submitting the order, please pay attention to the logistics condition. We will complete the verification within 24 hours after receiving your package, and then enter the order payment and start mailing.</view>
+  </view>
+</view>

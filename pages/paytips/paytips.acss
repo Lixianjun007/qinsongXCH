@@ -1,0 +1,3 @@
+.content { padding-top: 15%; }
+.content image { width: 80px; height: 80px; }
+.content .total_amount { font-size: 32px; }

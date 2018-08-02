@@ -1,0 +1,7 @@
+<template name="bottom_line">
+    <view a:if="{{(status || false)}}" class="data-bottom-line o-h">
+        <view class="left br-b-eee fl m-t-5"></view>
+        <view class="msg cr-999 fl fs-10 tc">我是有底线的</view>
+        <view class="right br-b-eee fr m-t-5"></view>
+    </view>
+</template>

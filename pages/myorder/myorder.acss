@@ -1,0 +1,7 @@
+form .base input { width: 62%; }
+form .base button { width: 35%; }
+.form-search input { height: 30px; }
+
+.item .content .courier { width: 60%; }
+.item .content .basis { width: 33% }
+.item .operation button { height: 25px; line-height: 25px; }
