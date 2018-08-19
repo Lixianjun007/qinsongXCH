@@ -4,7 +4,9 @@
     "pages/user/user",
     "pages/myorder/myorder",
     "pages/paytips/paytips",
-    "pages/agreement/agreement"
+    "pages/agreement/agreement",
+    "pages/water/water",
+    "pages/waterorder/waterorder"
   ],
   "window": {
     "titleBarColor": "#000",
@@ -20,6 +22,12 @@
         "icon": "/images/nav-icon-home.png",
         "activeIcon": "/images/nav-icon-home-active.png",
         "name": "首页 Home"
+      },
+      {
+        "pagePath": "pages/water/water",
+        "icon": "/images/water.png",
+        "activeIcon": "/images/water-active.png",
+        "name": "我要定水 Water"
       },
       {
         "pagePath": "pages/user/user",

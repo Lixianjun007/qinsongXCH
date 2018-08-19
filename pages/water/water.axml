@@ -1,0 +1,101 @@
+<view class="o-h">
+  <!-- <scroll-view scroll-y="{{true}}" style="height: 100%;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
+  <form onSubmit="submit_order" class="m-t-10 pd-t-10 bg-fff pd-l-5 pd-r-5" onReset="">
+    <view class="form-group m-t-10 pd-b-10">
+      <text class="block fs-14 fw-700 m-t-5">姓名 full name</text>
+      <view class="m-t-5">
+        <input type="text" placeholder="请填写姓名 Please fill in your name" name="name" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{name}}" onInput="form_name_input" />
+      </view>
+    </view>
+    <view class="form-group m-t-10 pd-b-10">
+      <text class="blockfs-14 fw-700 m-t-5">支付宝账号 Alipay number</text>
+      <view class="m-t-5">
+        <input type="text" placeholder="请填写支付宝账号 Please fill in Alipay number" name="mobile_phone" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{mobile}}" onInput="form_mobile_input" />
+      </view>
+    </view>
+    <view class="form-group m-t-10 pd-b-10">
+      <text class="block fs-14 fw-700 m-t-5">部门 department</text>
+      <view class="m-t-5 cut_head_icon">
+        <picker onChange="department_change" name="department" value="{{department_index}}" range="{{department_all}}">
+          <view a:if="{{department_index == -1}}" class="picker fs-14 cr-999 br-b-eee pd-b-5">请选择部门 Please select the department</view>
+          <view a:else class="picker fs-14 br-b-eee pd-b-5">{{department_all[department_index]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="form-group m-t-10 pd-b-10">
+      <text class="block fs-14 fw-700 m-t-5">所属船舶 Owned ship</text>
+      <view class="m-t-5 cut_head_icon">
+        <picker onChange="ship_change" name="ship" value="{{ship_index}}" range="{{ship_all}}">
+          <view a:if="{{ship_index == -1}}" class="picker fs-14 cr-999 br-b-eee pd-b-5">请选择船号 Please select the Owned ship</view>
+          <view a:else class="picker fs-14 br-b-eee pd-b-5">{{ship_all[ship_index]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="form-group m-t-10 pd-b-10">
+      <text class="block fs-14 fw-700 m-t-5" style="color : blue">我要购水 </text>
+      <view a:if="{{courier_data.length > 0}}">
+        <view a:for="{{courier_data}}" class="m-t-5 pd-b-5 br-b-eee fs-14 courier-item">
+          <view>品牌：{{item.brand}}</view>
+          <view>规格：{{item.display_name}}/{{item.quat}}*{{item.quat_num}}/  ￥{{item.price}}</view>
+          <image src="/images/close-icon.png" mode="scaleToFill" class="courier-item-remover fr m-r-10" onTap="courier_item_remover_event" data-value="{{index}}" />
+          <view style="height:30px">
+            <view style="display:inline-block;" >数量： </view> 
+            <input type="number"  placeholder="" name="goods-number" class="" onInput="fix_water_num" style="width:48px;display:inline-block;position:absolute; border:1px solid #e5e5e5;border-color:red" value="{{item.number}}" data-value="{{index}}" />
+            <view style="width:40px;display:inline;padding-left: 65px" >(点击修改) </view>
+          </view>
+        </view>
+      </view>
+      <view a:else class="cr-999 fs-14 m-t-5 br-b-eee pd-b-5" onTap="courier_view_close_event" data-value="1">        点击浏览开始添加      </view>
+    </view>
+    <view class="courier-add-submit tc cr-666 fs-16 m-t-15 tc">
+      <text onTap="courier_view_close_event" data-value="1">+ 浏览</text>
+    </view>
+    <view a:if="{{courier_is_show == 1}}" class="courier-view">
+      <view class="content-box bg-fff">
+        <view class="o-h">
+          <image src="/images/close-icon.png" mode="scaleToFill" class="close-icon fr m-r-10 m-t-10" onTap="courier_view_close_event" data-value="0" />
+        </view>
+        <view class="content pd-t-10 pd-l-10 pd-r-10 pd-b-10">
+          <view class="switch o-h m-t-5">
+            <button a:for="{{switch_list}}" class="fl fs-14 cr-666 {{item.active}}" data-type="{{item.type}}" onTap="switch_submit_event" size="mini" hover-class="none" type="default">{{item.name}}</button>
+          </view>
+          <view a:if="{{is_show_goods_name == 1}}" class="goods-list">
+            <scroll-view scroll-y="{{true}}" style="height: 200px;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+              <view class="goods-list o-h m-t-5">
+                <view a:for="{{menu}}" class="item">
+                  <view class="fl fs-14 cr-666 m-t-10 tc br-eee br-radius submit l-h-30 ht-30 {{item.active}}" data-value="{{index}}" data-tag="{{item.brand}}" onTap="list_submit_event">{{item.display_name}}</view>
+                </view>
+              </view>
+            </scroll-view>
+          </view>
+          <view a:if="{{is_show_goods_kg == 1}}" class="a-list">
+            <scroll-view scroll-y="{{true}}" style="height: 200px;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+              <view class="a-list-items">
+                <view a:for="{{lists}}" class="a-list-item-line a-list-item-line-wrap">
+                  <view class="a-list-item  am-list-item-top {{item.active}}" hover-class="a-list-item-hover" onTap="onItemTap_click" data-index="{{index}}"   >
+                    <text class="a-list-item-content">{{item.display_name}} / {{item.quat}} / {{item.quat_num}}</text>
+                    <view class="a-list-item-extra">￥{{item.price}}</view>
+                  </view>
+                </view>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="form-group m-t-10 pd-b-10">
+      <text class="block fs-14 fw-700 m-t-5">备注 remarks</text>
+      <view class="m-t-5">
+        <input type="text" placeholder="如有备注，请填写 Please fill in your remarks" name="remarks" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{remarks}}" onInput="form_remarks_input" />
+      </view>
+    </view>
+    <view class="nav o-h wh-auto m-t-15">
+      <view class="submit-price br-t-eee fl">
+        <text class="fs-12 m-l-5">合计约 Total：</text>
+        <text class="cr-f40 fw-700">￥{{total_price || 0.00}}</text>
+      </view>
+      <button class="form-submit fr fs-16 bg-main cr-fff l-h-40 ht-40" hover-class="none" formType="submit" loading="{{form_submit_loading}}" disabled="{{form_submit_loading}}">提交 Submit</button>
+    </view>
+  </form>
+  <!-- </scroll-view> -->
+</view>

@@ -1,11 +1,16 @@
 App({
+
+  //所有部门
+  department_all : ['A.Deck', 'B.Food and beverage', 'C.Photography', 'D.Engine', 'E.Finance', 'F.Human Resources', 'G.Medical', 'H.Cruise program', 'I.Casino', 'J.Surveillance', 'K.Production / theater ', 'L.Guest entertainment', 'M.Hotel', 'N.Musician', 'O.Concession', 'P.Galley', 'Q.IT', 'R.Restaurant', 'S.Bar', 'T.House miscellaneous', 'U.Shore excursions','V.Housekeeping','W.Guest Services','X.Spa','Y.Gift Shop','Z.Art','AA.Internet'],
+  
+  ship_all: ['NCL'],
+
   data: {
     // 用户信息缓存key
     cache_user_info_key: 'cache_chuan_user_info_key',
 
     // 设备信息缓存key
     cache_system_info_key: 'cache_chuan_system_info_key',
-
 
     // 默认用户头像
     default_user_head_src: '/images/default-user.png',
