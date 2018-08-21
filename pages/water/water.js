@@ -320,7 +320,7 @@ console.log(form_data['mobile']);
           if (res.data.code == 0) {
             my.showToast({
               type: 'success',
-              content: res.data.msg
+              content: '下单成功',
             });
             this.operation_pay_event(res.data.msg);
             setTimeout(function () {
