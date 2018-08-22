@@ -92,9 +92,9 @@ Page({
     var courier_data = this.data.courier_data;
     var total_price = parseFloat(0);
     for (var i in courier_data) {
-      kg = parseFloat(courier_data[i]['kg']);
+      kg = parseInt(courier_data[i]['kg']);
       // console.log(kg);  //调试用
-      total_price += parseFloat(app.price_two_decimal(8+(kg-1)*6));    //lxj
+      total_price += parseFloat(app.price_two_decimal(5+(kg-1)*1));    //lxj
     }
     
 
@@ -102,7 +102,7 @@ Page({
     if (courier_data[0] == null) {   //lxj
       this.setData({ total_price: 0.00 });
     } else {
-      this.setData({ total_price: (total_price < 8) ? '8.00' : total_price });
+      this.setData({ total_price: (total_price < 5) ? '5.00' : total_price });
     }
 
     // 窗口数据初始化
