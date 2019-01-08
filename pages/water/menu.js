@@ -3,6 +3,8 @@ var menuInfo = {};
 
 menuInfo.menu = [
     { brand: 'nfsq', display_name: '农夫山泉', active: '' },
+    { brand: 'wz', display_name: '旺仔', active: '' },
+    { brand: 'yn', display_name: '椰奶', active: '' },
     { brand: 'dnmd', display_name: '达能-脉动', active: '' },
     { brand: 'sdl', display_name: '三得利', active: '' },
     { brand: 'sm', display_name: '申美', active: '' },
@@ -38,6 +40,12 @@ menuInfo.lists = {
         { display_name: '茶Π柠檬红茶', quat: '500ml', quat_num: '24', price: '89', active: '' },
         { display_name: '尖叫纤维', quat: '500ml', quat_num: '24', price: '97', active: '' },
         { display_name: '尖叫多肽', quat: '500ml', quat_num: '24', price: '97', active: '' },
+    ],
+    wz: [
+        { display_name: '旺仔牛奶', quat: '250ml', quat_num: '24', price: '129', active: '' },
+    ],
+    yn: [
+        { display_name: '听装椰奶', quat: '245ml', quat_num: '30', price: '126', active: '' },
     ],
     dnmd: [
         { display_name: '脉动水蜜桃', quat: '600ml', quat_num: '15', price: '59', active: '' },
@@ -91,6 +99,7 @@ menuInfo.lists = {
         { display_name: '佳得乐西柚', quat: '600ml', quat_num: '15', price: '59', active: '' },
     ],
     ty: [
+        { display_name: '阿萨姆奶茶', quat: '500ml', quat_num: '15', price: '68', active: '' },
         { display_name: '冰红茶', quat: '500ml', quat_num: '18', price: '49', active: '' },
         { display_name: '冰红茶', quat: '1L', quat_num: '8', price: '40', active: '' },
         { display_name: '冰红茶', quat: '2L', quat_num: '6', price: '45', active: '' },
