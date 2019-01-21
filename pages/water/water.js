@@ -6,7 +6,7 @@ Page({
     department_all: app.department_all,
     department_index: -1,
     ship_all: app.ship_all,
-    ship_index: 0,
+    ship_index: -1,
     courier_is_show: 0,
     switch_list: [
       { name: '品牌', type: 'brand', active: 'switch-active' },
@@ -135,13 +135,13 @@ Page({
       }
     }
     var tmp_arr = {
-      brand : this.data.add_to_list_brand_display_name,
-      display_name : tmplist[index].display_name,
-      quat : tmplist[index].quat,
-      quat_num : tmplist[index].quat_num,
-      price : tmplist[index].price,
-      number : 1,
-      
+      brand: this.data.add_to_list_brand_display_name,
+      display_name: tmplist[index].display_name,
+      quat: tmplist[index].quat,
+      quat_num: tmplist[index].quat_num,
+      price: tmplist[index].price,
+      number: 1,
+
     };
     var tmp_courier_data = this.data.courier_data;
 
@@ -150,16 +150,16 @@ Page({
     this.setData({
       lists: tmplist,
       courier_is_show: 0,
-      courier_data : tmp_courier_data,
+      courier_data: tmp_courier_data,
     })
 
     // 总价计算
     this.courier_data_kg_price();
   },
-  
-  
+
+
   //修改数量
-  fix_water_num(e){
+  fix_water_num(e) {
 
     var index = parseInt(e.target.dataset.value);
     // console.log(456);
@@ -173,9 +173,9 @@ Page({
   },
 
 
-    /**
-   * 单号信息移除
-   */
+  /**
+ * 单号信息移除
+ */
   courier_item_remover_event(e) {
     var index = parseInt(e.target.dataset.value);
     var temp_courier_data = this.data.courier_data;
@@ -185,9 +185,9 @@ Page({
     // 总价计算
     this.courier_data_kg_price();
   },
-    /**
-   * 订单价格计算
-   */
+  /**
+ * 订单价格计算
+ */
   courier_data_kg_price() {
     var price = parseFloat(0);
     var courier_data = this.data.courier_data;
@@ -198,11 +198,11 @@ Page({
       // console.log(kg);  //调试用
       total_price += parseFloat(app.price_two_decimal(price));    //lxj
     }
-    
+
     // console.log(courier_data[0]);
     if (courier_data[0] == null) {   //lxj
       this.setData({ total_price: 0.00 });
-    }else {
+    } else {
       this.setData({ total_price: (total_price < 1) ? '0.00' : total_price });
     }
 
@@ -210,9 +210,9 @@ Page({
     this.courier_view_init();
   },
 
-    /**
-   * 部门选择
-   */
+  /**
+ * 部门选择
+ */
   department_change(e) {
     this.setData({
       department_index: e.detail.value,
@@ -228,9 +228,9 @@ Page({
     });
   },
 
-    /**
-   * 姓名输入事件同步
-   */
+  /**
+ * 姓名输入事件同步
+ */
   form_name_input(e) {
     this.setData({ name: e.detail.value });
   },
@@ -246,7 +246,7 @@ Page({
    * 手机输入事件同步
    */
   form_mobile_input(e) {
-    console.log( e.detail.value);
+    console.log(e.detail.value);
     this.setData({ mobile: e.detail.value });
   },
 
@@ -277,9 +277,9 @@ Page({
   onLoad() { },
 
 
-    /**
-   * 提交订单
-   */
+  /**
+ * 提交订单
+ */
   submit_order(e) {
     console.log('sdf');
     var user = app.GetUserInfo();
@@ -287,10 +287,10 @@ Page({
       return false;
     }
     var $this = this;
-console.log('shouji');
+    console.log('shouji');
     // 表单数据
     var form_data = e.detail.value;
-console.log(form_data['mobile']);
+    console.log(form_data['mobile']);
 
     // console.log(this.data.courier_data.length);
     form_data['courier'] = this.data.courier_data.length == 0 ? '' : JSON.stringify(this.data.courier_data);
@@ -305,73 +305,123 @@ console.log(form_data['mobile']);
       // { fields: 'is_agreement', msg: '请同意授权协议 Please agree to the Registration Policy' }
     ];
     if (app.fields_check(form_data, validation)) {
-      // 加载loding
-      my.showLoading({ content: '处理中 loading...' });
-      this.setData({ form_submit_loading: true });
+      var tmpthis = this;
+      my.confirm({
+        title: '亲',
+        content: '您选择的船号是：' + app.ship_all[form_data['ship']],
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        success({ confirm }) {
+          if (confirm) {
 
-      //获取店铺数据
-      my.httpRequest({
-        url: app.get_request_url('Add', 'Waterorder'),
-        method: 'POST',
-        data: form_data,
-        dataType: 'json',
-        success: (res) => {
-          my.hideLoading();
-          if (res.data.code == 0) {
-            my.showToast({
-              type: 'success',
-              content: '下单成功',
+
+
+            if (form_data['ship'] == 0) {
+              var contents = '您的包裹将送往喜悦号邮轮';
+            } else {
+              var contents = '您的包裹将送往歌诗达邮轮';
+            }
+            my.confirm({
+              title: '亲',
+              content: contents,
+              confirmButtonText: '确定',
+              cancelButtonText: '取消',
+              success({ confirm }) {
+
+                if (confirm) {
+
+
+                  // 加载loding
+                  my.showLoading({ content: '处理中 loading...' });
+                  tmpthis.setData({ form_submit_loading: true });
+
+                  //获取店铺数据
+                  my.httpRequest({
+                    url: app.get_request_url('Add', 'Waterorder'),
+                    method: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: (res) => {
+                      my.hideLoading();
+                      if (res.data.code == 0) {
+                        my.showToast({
+                          type: 'success',
+                          content: '下单成功',
+                        });
+                        tmpthis.operation_pay_event(res.data.msg);
+                        setTimeout(function () {
+                          $this.form_reset();
+                          my.navigateTo({
+                            url: '/pages/waterorder/waterorder'
+                          });
+                        }, 1000);
+                      } else {
+                        tmpthis.setData({ form_submit_loading: false });
+                        my.showToast({
+                          type: 'fail',
+                          content: res.data.msg
+                        });
+                      }
+                    },
+                    fail: () => {
+                      my.hideLoading();
+                      tmpthis.setData({ form_submit_loading: false });
+
+                      my.showToast({
+                        type: 'fail',
+                        content: '服务器请求出错 service error'
+                      });
+                    }
+                  });
+
+
+
+                }
+
+
+              },
+              fail() {
+                console.log('fail');
+              },
+              complete() {
+                console.log('complete');
+              },
             });
-            this.operation_pay_event(res.data.msg);
-            setTimeout(function () {
-              $this.form_reset();
-              my.navigateTo({
-                url: '/pages/waterorder/waterorder'
-              });
-            }, 1000);
-          } else {
-            this.setData({ form_submit_loading: false });
-            my.showToast({
-              type: 'fail',
-              content: res.data.msg
-            });
+
           }
         },
-        fail: () => {
-          my.hideLoading();
-          this.setData({ form_submit_loading: false });
+        fail() {
 
-          my.showToast({
-            type: 'fail',
-            content: '服务器请求出错 service error'
-          });
-        }
+        },
+        complete() {
+          console.log('complete');
+        },
       });
     }
   },
 
-    /**
-   * 表单重置
-   */
+  /**
+ * 表单重置
+ */
   form_reset() {
     this.courier_view_init();
 
     this.setData({
       form_submit_loading: false,
       department_index: -1,
-      ship_index: 0,
+      ship_index: -1,
       courier_data: [],
       name: '',
       mobile: '',
       is_agreement: false,
-      total_price : 0,
+      total_price: 0,
     });
   },
 
 
-    /**
-   * 自定义分享
-   */
+  /**
+ * 自定义分享
+ */
   onShareAppMessage() {
     return {
       title: app.data.application_title,
@@ -380,14 +430,13 @@ console.log(form_data['mobile']);
     };
   },
 
-   /**
-   * 支付事件
-   */
-  operation_pay_event(order_id)
-  {
+  /**
+  * 支付事件
+  */
+  operation_pay_event(order_id) {
     // 参数
     var value = order_id;
-    
+
     // 加载loding
     // my.showLoading({content: '处理中 processing ...'});
 
@@ -395,27 +444,25 @@ console.log(form_data['mobile']);
     my.httpRequest({
       url: app.get_request_url('Pay', 'Waterorder'),
       method: 'POST',
-      data: {order_id: value},
+      data: { order_id: value },
       dataType: 'json',
       success: (res) => {
         my.hideLoading();
         console.log(res.data);
-        if(res.data.code == 0)
-        {
+        if (res.data.code == 0) {
           my.tradePay({
             orderStr: res.data.data,
             success: (res) => {
               // 数据设置
-              if(res.resultCode == '9000')
-              {
+              if (res.resultCode == '9000') {
                 var temp_data_list = this.data.data_list;
                 temp_data_list[index]['status'] = 2;
-                this.setData({data_list: temp_data_list});
+                this.setData({ data_list: temp_data_list });
               }
 
               // 跳转支付页面
               my.navigateTo({
-                url: '/pages/paytips/paytips?code='+res.resultCode+'&result='+res.result
+                url: '/pages/paytips/paytips?code=' + res.resultCode + '&result=' + res.result
               });
             },
             fail: (res) => {

@@ -76,11 +76,15 @@ Page({
             if(this.data.data_page <= 1)
             {
               var temp_data_list = res.data.data.data;
+              for(var i in temp_data_list){
+                temp_data_list[i].ship=app.ship_all[temp_data_list[i].ship];
+              }
             } else {
               var temp_data_list = this.data.data_list;
               var temp_data = res.data.data.data;
               for(var i in temp_data)
               {
+                temp_data[i].ship=app.ship_all[temp_data[i].ship];
                 temp_data_list.push(temp_data[i]);
               }
             }

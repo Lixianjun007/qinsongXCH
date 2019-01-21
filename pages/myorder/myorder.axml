@@ -11,7 +11,7 @@
     <view a:for="{{data_list}}" class="item m-t-10">
       <view class="pd-t-5 pd-b-5 pd-l-5 pd-r-5 o-h bg-eee">
         <view class="fl">
-          <text class="fs-12 cr-666 m-l-3">{{item.user_name}}</text>
+          <text class="fs-12 cr-666 m-l-3">【{{item.ship}}】 -- {{item.user_name}}</text>
         </view>
         <view class="fr">
           <text class="fs-12 cr-999 m-l-3">{{item.add_time_text}}</text>

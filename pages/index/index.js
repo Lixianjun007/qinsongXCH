@@ -2,10 +2,10 @@ const app = getApp();
 Page({
   data: {
     department_all: app.department_all,
-      //concession, house miscellaneous, gallery=>galley
+    //concession, house miscellaneous, gallery=>galley
     department_index: -1,
     ship_all: app.ship_all,
-    ship_index: 0,
+    ship_index: -1,
     courier_is_show: 0,
     switch_list: [
       { name: '物品名称 name', type: 'name', active: 'switch-active' },
@@ -94,9 +94,9 @@ Page({
     for (var i in courier_data) {
       kg = parseInt(courier_data[i]['kg']);
       // console.log(kg);  //调试用
-      total_price += parseFloat(app.price_two_decimal(5+(kg-1)*1));    //lxj
+      total_price += parseFloat(app.price_two_decimal(5 + (kg - 1) * 1));    //lxj
     }
-    
+
 
     // console.log(courier_data[0]);
     if (courier_data[0] == null) {   //lxj
@@ -439,7 +439,6 @@ Page({
    * 提交订单
    */
   submit_order(e) {
-    console.log('sdf');
     var user = app.GetUserInfo();
     if (user == false) {
       return false;
@@ -448,7 +447,12 @@ Page({
 
     // 表单数据
     var form_data = e.detail.value;
-    console.log(form_data);
+    // console.log(form_data);
+    // //弹出船号提示
+    // console.log(app.ship_all[form_data['ship']]);
+    // var isTrue = this.modalTap(form_data['ship']);
+    // console.log(isTrue);
+    // return;
     form_data['courier'] = this.data.courier_data.length == 0 ? '' : JSON.stringify(this.data.courier_data);
 
     // 数据校验
@@ -461,47 +465,102 @@ Page({
       { fields: 'is_agreement', msg: '请同意授权协议 Please agree to the Registration Policy' }
     ];
     if (app.fields_check(form_data, validation)) {
-      // 加载loding
-      my.showLoading({ content: '处理中 loading...' });
-      this.setData({ form_submit_loading: true });
+      var tmpthis = this;
 
-      // 获取店铺数据
-      my.httpRequest({
-        url: app.get_request_url('Add', 'Order'),
-        method: 'POST',
-        data: form_data,
-        dataType: 'json',
-        success: (res) => {
-          my.hideLoading();
-          if (res.data.code == 0) {
-            my.showToast({
-              type: 'success',
-              content: res.data.msg
+
+      ///////////////////////////////////////
+      my.confirm({
+        title: '亲',
+        content: '您选择的船号是：' + app.ship_all[form_data['ship']],
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        success({ confirm }) {
+          if (confirm) {
+
+            if (form_data['ship'] == 0) {
+              var contents = '您的包裹将送往喜悦号邮轮';
+            } else {
+              var contents = '您的包裹将送往歌诗达邮轮';
+            }
+            my.confirm({
+              title: '亲',
+              content: contents,
+              confirmButtonText: '确定',
+              cancelButtonText: '取消',
+              success({ confirm }) {
+
+                if (confirm) {
+                  //////////
+                  my.showLoading({ content: '处理中 loading...' });
+                  tmpthis.setData({ form_submit_loading: true });
+
+                  // 获取店铺数据
+                  my.httpRequest({
+                    url: app.get_request_url('Add', 'Order'),
+                    method: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    success: (res) => {
+                      my.hideLoading();
+                      if (res.data.code == 0) {
+                        my.showToast({
+                          type: 'success',
+                          content: res.data.msg
+                        });
+                        setTimeout(function () {
+                          $this.form_reset();
+                          my.navigateTo({
+                            url: '/pages/myorder/myorder'
+                          });
+                        }, 1000);
+                      } else {
+                        tmpthis.setData({ form_submit_loading: false });
+                        my.showToast({
+                          type: 'fail',
+                          content: res.data.msg
+                        });
+                      }
+                    },
+                    fail: () => {
+                      my.hideLoading();
+                      tmpthis.setData({ form_submit_loading: false });
+
+                      my.showToast({
+                        type: 'fail',
+                        content: '服务器请求出错 service error'
+                      });
+                    }
+                  });
+                  /////////////////////
+                }
+              },
+              fail() {
+                console.log('fail');
+              },
+              complete() {
+                console.log('complete');
+              },
             });
-            setTimeout(function () {
-              $this.form_reset();
-              my.navigateTo({
-                url: '/pages/myorder/myorder'
-              });
-            }, 1000);
-          } else {
-            this.setData({ form_submit_loading: false });
-            my.showToast({
-              type: 'fail',
-              content: res.data.msg
-            });
+
+
+
+
+
           }
-        },
-        fail: () => {
-          my.hideLoading();
-          this.setData({ form_submit_loading: false });
+          // 加载loding
 
-          my.showToast({
-            type: 'fail',
-            content: '服务器请求出错 service error'
-          });
-        }
+        },
+        fail() {
+
+        },
+        complete() {
+          console.log('complete');
+        },
       });
+      /////////////////////////////////////////////////
+
+
+
     }
   },
 
@@ -514,7 +573,7 @@ Page({
     this.setData({
       form_submit_loading: false,
       department_index: -1,
-      ship_index: 0,
+      ship_index: -1,
       courier_data: [],
       name: '',
       mobile: '',
@@ -550,5 +609,8 @@ Page({
       path: '/pages/index/index?share=1'
     };
   },
+
+
+
 
 });
