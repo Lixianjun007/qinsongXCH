@@ -65,7 +65,6 @@ Page({
     for (var i in temp_menu) {
       temp_menu[i]['active'] = '';
     }
-
     var tmplist = menuInfo.lists.nfsq;
     this.setData({
       switch_list: temp_switch_list,
@@ -318,8 +317,10 @@ Page({
 
             if (form_data['ship'] == 0) {
               var contents = '您的包裹将送往喜悦号邮轮';
-            } else {
+            } else if (form_data['ship'] == 1) {
               var contents = '您的包裹将送往歌诗达邮轮';
+            } else {
+              var contents = '您的包裹将送往皇家加勒比邮轮';
             }
             my.confirm({
               title: '亲',

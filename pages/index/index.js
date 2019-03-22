@@ -92,9 +92,10 @@ Page({
     var courier_data = this.data.courier_data;
     var total_price = parseFloat(0);
     for (var i in courier_data) {
-      kg = parseInt(courier_data[i]['kg']);
+      // kg = parseInt(courier_data[i]['kg']);
+      kg = courier_data[i]['kg'];
       // console.log(kg);  //调试用
-      total_price += parseFloat(app.price_two_decimal(5 + (kg - 1) * 1));    //lxj
+      total_price += parseFloat(app.price_two_decimal(5 + (kg - 1) * 2));    //lxj
     }
 
 
@@ -479,8 +480,10 @@ Page({
 
             if (form_data['ship'] == 0) {
               var contents = '您的包裹将送往喜悦号邮轮';
-            } else {
+            } else if (form_data['ship'] == 1) {
               var contents = '您的包裹将送往歌诗达邮轮';
+            } else {
+              var contents = '您的包裹将送往皇家加勒比邮轮';
             }
             my.confirm({
               title: '亲',
