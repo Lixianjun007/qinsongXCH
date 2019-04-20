@@ -40,8 +40,8 @@ Page({
     courier_goods_kg_other_input_value: '',
     form_submit_loading: false,
     total_price: 0.00,
-    receives_cn_data: { address: "上海市嘉定区南翔镇纬五路228号6号楼107室 冀通物流", mobile: "+8615021617092" },
-    receives_en_data: { address: "228 WeiWu Road, Building 6, Room 107, JiaDing District, Shanghai, China  Yi Tong logistic", mobile: "+8615021617092" },
+    receives_cn_data: { address: "上海市嘉定区南翔镇纬五路228号6号楼107室 冀通物流+所属船舶+部门", mobile: "+8615021617092" },
+    receives_en_data: { address: "owned ship+Department 228 WeiWu Road, Building 6, Room 107, JiaDing District, Shanghai, China  Yi Tong logistic", mobile: "+8615021617092" },
     name: '',
     mobile: '',
     remarks: '',
@@ -479,11 +479,13 @@ Page({
           if (confirm) {
 
             if (form_data['ship'] == 0) {
-              var contents = '您的包裹将送往喜悦号邮轮';
+              var contents = '您的包裹将送往诺唯真号邮轮';
             } else if (form_data['ship'] == 1) {
-              var contents = '您的包裹将送往歌诗达邮轮';
+              var contents = '您的包裹将送往威尼斯人号邮轮';
+            } else if (form_data['ship'] == 1) {
+              var contents = '您的包裹将送往皇家海洋量子号邮轮';
             } else {
-              var contents = '您的包裹将送往皇家加勒比邮轮';
+              var contents = '您的包裹将送往EDR探索梦号邮轮';
             }
             my.confirm({
               title: '亲',

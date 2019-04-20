@@ -1,5 +1,6 @@
 <view class="o-h">
 
+
    <scroll-view scroll-y="{{true}}" style="height: 100%;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <view class="base bg-fff pd-l-5 pd-r-5 pd-b-10">
     <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
@@ -12,11 +13,13 @@
     </view>
     <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
       <text class="title block fl cr-666">收件人:</text>
-      <text class="content block fr cr-999">所属船舶 + 部门 + 姓名 </text>
+      <text class="content block fr cr-999">所属船舶+姓名 <text class="color-red"> （船名必填！） </text> </text>
+      
+
     </view>
     <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
       <text class="title block fl cr-666">The Receiver:</text>
-      <text class="content block fr cr-999">Owned Ship + Department + Name</text>
+      <text class="content block fr cr-999">owned ship+name <text class="color-red"> （船名必填！） </text></text>
     </view>
     <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
       <text class="title block fl cr-666">收件人电话:</text>

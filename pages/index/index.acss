@@ -16,3 +16,4 @@
 .goods-list .item .submit { width: 88px; }
 .goods-other input { width: calc(100% - 122px); }
 .courier-active { background: #eee; border-color: #eaeaea; }
+.color-red{ color: red}

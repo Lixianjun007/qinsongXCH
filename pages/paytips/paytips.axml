@@ -8,7 +8,8 @@
   </view>
 </view>
 <view class="m-t-15 pd-t-10 tc">
-  <navigator class="dy-wib" open-type="navigateBack">
+       
+   <navigator class="dy-wib" open-type="redirect" url="/pages/user/user">
     <button type="default" hover-class="none" size="mini">返回</button>
   </navigator>
   <navigator a:if="{{(params.page || null) != null && (params.title || null) != null}}" class="dy-wib" url="/pages/{{params.page}}/{{params.page}}" open-type="redirect">

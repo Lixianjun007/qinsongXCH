@@ -316,11 +316,13 @@ Page({
 
 
             if (form_data['ship'] == 0) {
-              var contents = '您的包裹将送往喜悦号邮轮';
+              var contents = '您的包裹将送往诺唯真号邮轮';
             } else if (form_data['ship'] == 1) {
-              var contents = '您的包裹将送往歌诗达邮轮';
+              var contents = '您的包裹将送往威尼斯人号邮轮';
+            } else if (form_data['ship'] == 1) {
+              var contents = '您的包裹将送往皇家海洋量子号邮轮';
             } else {
-              var contents = '您的包裹将送往皇家加勒比邮轮';
+              var contents = '您的包裹将送往EDR探索梦号邮轮';
             }
             my.confirm({
               title: '亲',
