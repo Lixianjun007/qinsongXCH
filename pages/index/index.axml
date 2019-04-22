@@ -1,156 +1,148 @@
 <view class="o-h">
-
-
-   <scroll-view scroll-y="{{true}}" style="height: 100%;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-  <view class="base bg-fff pd-l-5 pd-r-5 pd-b-10">
-    <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
-      <text class="title block fl cr-666">包裹代收地址:</text>
-      <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="cn" data-field="address">{{receives_cn_data.address}}</text>
-    </view>
-    <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
-      <text class="title block fl cr-666">The Package Address:</text>
-      <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="en" data-field="address">{{receives_en_data.address}}</text>
-    </view>
-    <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
-      <text class="title block fl cr-666">收件人:</text>
-      <text class="content block fr cr-999">所属船舶+姓名 <text class="color-red"> （船名必填！） </text> </text>
-      
-
-    </view>
-    <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
-      <text class="title block fl cr-666">The Receiver:</text>
-      <text class="content block fr cr-999">owned ship+name <text class="color-red"> （船名必填！） </text></text>
-    </view>
-    <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
-      <text class="title block fl cr-666">收件人电话:</text>
-      <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="cn" data-field="mobile">{{receives_en_data.mobile}}</text>
-    </view>
-    <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
-     <text class="title block fl cr-666">Recipient phone:</text>
-     <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="en" data-field="mobile">{{receives_en_data.mobile}}</text>
-    </view>
-  </view>
-
-  <form onSubmit="submit_order" class="m-t-10 pd-t-10 bg-fff pd-l-5 pd-r-5" onReset="formReset">
-    <view class="tips">请准确邮寄信息 Please send the information accurately</view>
-    <view class="form-group m-t-10 pd-b-10">
-      <text class="block fs-14 fw-700 m-t-5">姓名 full name</text>
-      <view class="m-t-5">
-        <input type="text" placeholder="请填写姓名 Please fill in your name" name="name" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{name}}" onInput="form_name_input" />
+  <scroll-view scroll-y="{{true}}" style="height: 100%;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class="base bg-fff pd-l-5 pd-r-5 pd-b-10">
+      <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
+        <text class="title block fl cr-666">包裹代收地址:</text>
+        <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="cn" data-field="address">{{receives_cn_data.address}}</text>
+      </view>
+      <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
+        <text class="title block fl cr-666">The Package Address:</text>
+        <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="en" data-field="address">{{receives_en_data.address}}</text>
+      </view>
+      <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
+        <text class="title block fl cr-666">收件人:</text>
+        <text class="content block fr cr-999">所属船舶+姓名 
+          <text class="color-red"> （船名必填！） </text>
+        </text>
+      </view>
+      <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
+        <text class="title block fl cr-666">The Receiver:</text>
+        <text class="content block fr cr-999">owned ship+name 
+          <text class="color-red"> （船名必填！） </text>
+        </text>
+      </view>
+      <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
+        <text class="title block fl cr-666">收件人电话:</text>
+        <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="cn" data-field="mobile">{{receives_en_data.mobile}}</text>
+      </view>
+      <view class="fs-12 br-b-f6 l-h-18 pd-t-5 pd-b-5 o-h">
+        <text class="title block fl cr-666">Recipient phone:</text>
+        <text class="content block fr cr-999" onTap="receives_data_copy_event" data-type="en" data-field="mobile">{{receives_en_data.mobile}}</text>
       </view>
     </view>
-    <view class="form-group m-t-10 pd-b-10">
-      <text class="blockfs-14 fw-700 m-t-5">支付宝账号 Alipay number</text>
-      <view class="m-t-5">
-        <input type="text" placeholder="请填写支付宝账号 Please fill in Alipay number" name="mobile_phone" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{mobile}}" onInput="form_mobile_input" />
+    <form onSubmit="submit_order" class="m-t-10 pd-t-10 bg-fff pd-l-5 pd-r-5" onReset="formReset">
+      <view class="tips">请准确邮寄信息 Please send the information accurately</view>
+      <view class="form-group m-t-10 pd-b-10">
+        <text class="block fs-14 fw-700 m-t-5">姓名 full name</text>
+        <view class="m-t-5">
+          <input type="text" placeholder="请填写姓名 Please fill in your name" name="name" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{name}}" onInput="form_name_input" />
+        </view>
       </view>
-    </view>
-    <view class="form-group m-t-10 pd-b-10">
-      <text class="block fs-14 fw-700 m-t-5">部门 department</text>
-      <view class="m-t-5 cut_head_icon">
-        <picker onChange="department_change" name="department" value="{{department_index}}" range="{{department_all}}">
-          <view a:if="{{department_index == -1}}" class="picker fs-14 cr-999 br-b-eee pd-b-5">请选择部门 Please select the department</view>
-          <view a:else class="picker fs-14 br-b-eee pd-b-5">{{department_all[department_index]}}</view>
-        </picker>
+      <view class="form-group m-t-10 pd-b-10">
+        <text class="blockfs-14 fw-700 m-t-5">支付宝账号 Alipay number</text>
+        <view class="m-t-5">
+          <input type="text" placeholder="请填写支付宝账号 Please fill in Alipay number" name="mobile_phone" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{mobile}}" onInput="form_mobile_input" />
+        </view>
       </view>
-    </view>
-    <view class="form-group m-t-10 pd-b-10">
-      <text class="block fs-14 fw-700 m-t-5">所属船舶 Owned ship</text>
-      <view class="m-t-5 cut_head_icon">
-        <picker onChange="ship_change" name="ship" value="{{ship_index}}" range="{{ship_all}}">
-          <view a:if="{{ship_index == -1}}" class="picker fs-14 cr-999 br-b-eee pd-b-5">请选择船号 Please select the Owned ship</view>
-          <view a:else class="picker fs-14 br-b-eee pd-b-5">{{ship_all[ship_index]}}</view>
-        </picker>
+      <view class="form-group m-t-10 pd-b-10">
+        <text class="block fs-14 fw-700 m-t-5">部门 department</text>
+        <view class="m-t-5 cut_head_icon">
+          <picker onChange="department_change" name="department" value="{{department_index}}" range="{{department_all}}">
+            <view a:if="{{department_index == -1}}" class="picker fs-14 cr-999 br-b-eee pd-b-5">请选择部门 Please select the department</view>
+            <view a:else class="picker fs-14 br-b-eee pd-b-5">{{department_all[department_index]}}</view>
+          </picker>
+        </view>
       </view>
-    </view>
-    <view class="form-group m-t-10 pd-b-10">
-      <text class="block fs-14 fw-700 m-t-5">快递单号信息 Express number information</text>
-      <view a:if="{{courier_data.length > 0}}">
-      <view a:for="{{courier_data}}" class="m-t-5 pd-b-5 br-b-eee fs-14 courier-item">
-        <view>{{item.number}}</view>
-        <view>{{item.goods}}/{{item.kg}}kg</view>
-        <image src="/images/close-icon.png" mode="scaleToFill" class="courier-item-remover fr m-r-10" onTap="courier_item_remover_event" data-value="{{index}}" />
+      <view class="form-group m-t-10 pd-b-10">
+        <text class="block fs-14 fw-700 m-t-5">所属船舶 Owned ship</text>
+        <view class="m-t-5 cut_head_icon">
+          <picker onChange="ship_change" name="ship" value="{{ship_index}}" range="{{ship_all}}">
+            <view a:if="{{ship_index == -1}}" class="picker fs-14 cr-999 br-b-eee pd-b-5">请选择船号 Please select the Owned ship</view>
+            <view a:else class="picker fs-14 br-b-eee pd-b-5">{{ship_all[ship_index]}}</view>
+          </picker>
+        </view>
       </view>
-      </view>
-      <view a:else class="cr-999 fs-14 m-t-5 br-b-eee pd-b-5" onTap="courier_view_close_event" data-value="1">
+      <view class="form-group m-t-10 pd-b-10">
+        <text class="block fs-14 fw-700 m-t-5">快递单号信息 Express number information</text>
+        <view a:if="{{courier_data.length > 0}}">
+          <view a:for="{{courier_data}}" class="m-t-5 pd-b-5 br-b-eee fs-14 courier-item">
+            <view>{{item.number}}</view>
+            <view>{{item.goods}}/{{item.kg}}kg</view>
+            <image src="/images/close-icon.png" mode="scaleToFill" class="courier-item-remover fr m-r-10" onTap="courier_item_remover_event" data-value="{{index}}" />
+          </view>
+        </view>
+        <view a:else class="cr-999 fs-14 m-t-5 br-b-eee pd-b-5" onTap="courier_view_close_event" data-value="1">
         请添加快递单号信息 Please add express number
       </view>
-    </view>
-    <view class="courier-add-submit tc cr-666 fs-16 m-t-15 tc">
-      <text onTap="courier_view_close_event" data-value="1">+ 添加快递单号 add express number</text>
-    </view>
-
-    <view a:if="{{courier_is_show == 1}}" class="courier-view">
-      <view class="content-box bg-fff">
-        <view class="o-h">
-          <image src="/images/close-icon.png" mode="scaleToFill" class="close-icon fr m-r-10 m-t-10" onTap="courier_view_close_event" data-value="0" />
-        </view>
-        <view class="content pd-t-10 pd-l-10 pd-r-10 pd-b-10">
-          <input type="text" placeholder="快递单号 Express information" value="{{courier_number_value}}" focus="{{courier_number_input_focus}}" onInput="courier_number_input" onBlur="courier_number_blur_input" class="br-0 fs-14 wh-auto pd-l-5 pd-r-5 bs-bx br-b-eee pd-b-5" />
-          <view class="switch o-h m-t-5">
-            <button a:for="{{switch_list}}" class="fl fs-14 cr-666 {{item.active}}" data-type="{{item.type}}" onTap="switch_submit_event" size="mini" hover-class="none" type="default">{{item.name}}</button>
+      </view>
+      <view class="courier-add-submit tc cr-666 fs-16 m-t-15 tc">
+        <text onTap="courier_view_close_event" data-value="1">+ 添加快递单号 add express number</text>
+      </view>
+      <view a:if="{{courier_is_show == 1}}" class="courier-view">
+        <view class="content-box bg-fff">
+          <view class="o-h">
+            <image src="/images/close-icon.png" mode="scaleToFill" class="close-icon fr m-r-10 m-t-10" onTap="courier_view_close_event" data-value="0" />
           </view>
-          <view a:if="{{is_show_goods_name == 1}}" class="goods-list">
-            <view class="goods-list o-h m-t-5">
-              <view a:for="{{courier_goods_all}}" class="item">
-                <view class="fl fs-14 cr-666 m-t-10 tc br-eee br-radius submit l-h-30 ht-30 {{item.active}}" data-value="{{index}}" onTap="courier_goods_submit_event">{{item.name}}</view>
+          <view class="content pd-t-10 pd-l-10 pd-r-10 pd-b-10">
+             <input type="text" placeholder="快递单号 Express information"  focus="{{courier_number_input_focus}}" onInput="courier_number_input" onBlur="courier_number_blur_input" class="br-0 fs-14 wh-auto pd-l-5 pd-r-5 bs-bx br-b-eee pd-b-5" />
+           <view>快递单号：{{courier_number_value}}</view>
+            <view class="switch o-h m-t-5">
+              <button a:for="{{switch_list}}" class="fl fs-14 cr-666 {{item.active}}" data-type="{{item.type}}" onTap="switch_submit_event" size="mini" hover-class="none" type="default">{{item.name}}</button>
+            </view>
+            <view a:if="{{is_show_goods_name == 1}}" class="goods-list">
+              <view class="goods-list o-h m-t-5">
+                <view a:for="{{courier_goods_all}}" class="item">
+                  <view class="fl fs-14 cr-666 m-t-10 tc br-eee br-radius submit l-h-30 ht-30 {{item.active}}" data-value="{{index}}" onTap="courier_goods_submit_event">{{item.name}}</view>
+                </view>
+              </view>
+              <view a:if="{{is_show_goods_name_other == 1}}" class="goods-other m-t-15">
+                <input type="text" placeholder="物品描述 Item description" value="{{courier_goods_name_other_input_value}}" onInput="courier_goods_name_other_input" class="br-0 fs-14 pd-l-5 pd-r-5 bs-bx br-b-eee pd-b-5 fl m-r-5 m-t-8" />
+                <button type="default" class="fl bg-main cr-fff br-main" size="mini" onTap="courier_goods_name_other_submit_event" hover-class="none">确认 confirm</button>
               </view>
             </view>
-            <view a:if="{{is_show_goods_name_other == 1}}" class="goods-other m-t-15">
-               <input type="text" placeholder="物品描述 Item description" value="{{courier_goods_name_other_input_value}}" onInput="courier_goods_name_other_input" class="br-0 fs-14 pd-l-5 pd-r-5 bs-bx br-b-eee pd-b-5 fl m-r-5 m-t-8" />
-               <button type="default" class="fl bg-main cr-fff br-main" size="mini" onTap="courier_goods_name_other_submit_event" hover-class="none">确认 confirm</button>
-            </view>
-          </view>
-          <view a:if="{{is_show_goods_kg == 1}}" class="goods-list">
-            <view class="goods-list o-h m-t-5">
-              <view a:for="{{courier_kg_all}}" class="item">
-                <view class="fl fs-14 cr-666 m-t-10 tc br-eee br-radius submit l-h-30 ht-30 {{item.active}}" data-value="{{index}}" onTap="courier_kg_submit_event">{{item.name}}KG</view>
+            <view a:if="{{is_show_goods_kg == 1}}" class="goods-list">
+              <view class="goods-list o-h m-t-5">
+                <view a:for="{{courier_kg_all}}" class="item">
+                  <view class="fl fs-14 cr-666 m-t-10 tc br-eee br-radius submit l-h-30 ht-30 {{item.active}}" data-value="{{index}}" onTap="courier_kg_submit_event">{{item.name}}KG</view>
+                </view>
               </view>
-            </view>
-            <view a:if="{{is_show_goods_kg_other == 1}}" class="goods-other m-t-15">
-               <input type="digit" placeholder="物品重量 Weight of goods" value="{{courier_goods_kg_other_input_value}}" onInput="courier_goods_kg_other_input" class="br-0 fs-14 pd-l-5 pd-r-5 bs-bx br-b-eee pd-b-5 fl m-r-5 m-t-8" />
-               <button type="default" class="fl bg-main cr-fff br-main" size="mini" onTap="courier_goods_kg_other_submit_event" hover-class="none">确认 confirm</button>
+              <view a:if="{{is_show_goods_kg_other == 1}}" class="goods-other m-t-15">
+                <input type="digit" placeholder="物品重量 Weight of goods" value="{{courier_goods_kg_other_input_value}}" onInput="courier_goods_kg_other_input" class="br-0 fs-14 pd-l-5 pd-r-5 bs-bx br-b-eee pd-b-5 fl m-r-5 m-t-8" />
+                <button type="default" class="fl bg-main cr-fff br-main" size="mini" onTap="courier_goods_kg_other_submit_event" hover-class="none">确认 confirm</button>
+              </view>
             </view>
           </view>
         </view>
       </view>
-    </view>
-    
-    <view class="form-group m-t-10 pd-b-10">
-      <text class="block fs-14 fw-700 m-t-5">备注 remarks</text>
-      <view class="m-t-5">
-        <input type="text" placeholder="如有备注，请填写 Please fill in your remarks" name="remarks" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{remarks}}" onInput="form_remarks_input" />
+      <view class="form-group m-t-10 pd-b-10">
+        <text class="block fs-14 fw-700 m-t-5">备注 remarks</text>
+        <view class="m-t-5">
+          <input type="text" placeholder="如有备注，请填写 Please fill in your remarks" name="remarks" class="br-0 fs-14 wh-auto pd-l-0 pd-r-0 bs-bx br-b-eee pd-b-5" value="{{remarks}}" onInput="form_remarks_input" />
+        </view>
       </view>
-    </view>
-
-    <view class="form-group m-t-15 pd-b-10">
-      <view class="cr-333 fs-12 fw-500">操作流程 Operation process</view>
-      <view class="cr-666 fs-10 m-t-5 l-h-18">1:务必完善页面包裹信息以免物品遗失给您带来不便</view>
-      <view class="cr-666 fs-10 m-t-2 l-h-18">1:Be sure to improve the page package information so as not to cause inconvenience to you if the items are lost</view>
-      <view class="cr-666 fs-10 m-t-5 l-h-18">2:等待我方签收包裹后给您发送支付链接</view>
-      <view class="cr-666 fs-10 m-t-2 l-h-18">2:Waiting for us to sign the package and send you a payment link</view>
-      <view class="cr-666 fs-10 m-t-5 l-h-18">3:支付完成后我们会及时配送上船</view>
-      <view class="cr-666 fs-10 m-t-2 l-h-18">3:After payment is completed, We will delivery to ship on time</view>
-      <checkbox-group name="is_agreement"  onChange="agreement_event" class="m-t-5">
-        <label>
-          <checkbox value="1" checked="{{is_agreement}}" />
-          <text class="fs-12">同意 Agree.</text>
-          <navigator url="/pages/agreement/agreement" hover-class="none" class="cr-f00 fs-12 dy-wib">《授权协议 Registration Policy》</navigator>
-        </label>
-      </checkbox-group>
-    </view>
-    <view class="nav o-h wh-auto m-t-15">
-      <view class="submit-price br-t-eee fl">
-        <text class="fs-12 m-l-5">合计约 Total：</text>
-        <text class="cr-f40 fw-700">￥{{total_price || 0.00}}</text>
+      <view class="form-group m-t-15 pd-b-10">
+        <view class="cr-333 fs-12 fw-500">操作流程 Operation process</view>
+        <view class="cr-666 fs-10 m-t-5 l-h-18">1:务必完善页面包裹信息以免物品遗失给您带来不便</view>
+        <view class="cr-666 fs-10 m-t-2 l-h-18">1:Be sure to improve the page package information so as not to cause inconvenience to you if the items are lost</view>
+        <view class="cr-666 fs-10 m-t-5 l-h-18">2:等待我方签收包裹后给您发送支付链接</view>
+        <view class="cr-666 fs-10 m-t-2 l-h-18">2:Waiting for us to sign the package and send you a payment link</view>
+        <view class="cr-666 fs-10 m-t-5 l-h-18">3:支付完成后我们会及时配送上船</view>
+        <view class="cr-666 fs-10 m-t-2 l-h-18">3:After payment is completed, We will delivery to ship on time</view>
+        <checkbox-group name="is_agreement" onChange="agreement_event" class="m-t-5">
+          <label>
+            <checkbox value="1" checked="{{is_agreement}}" />
+            <text class="fs-12">同意 Agree.</text>
+            <navigator url="/pages/agreement/agreement" hover-class="none" class="cr-f00 fs-12 dy-wib">《授权协议 Registration Policy》</navigator>
+          </label>
+        </checkbox-group>
       </view>
-      <button class="form-submit fr fs-16 bg-main cr-fff l-h-40 ht-40" hover-class="none" formType="submit" loading="{{form_submit_loading}}" disabled="{{form_submit_loading}}">提交 Submit</button>
-    </view>
-  </form>
-
-
-
+      <view class="nav o-h wh-auto m-t-15">
+        <view class="submit-price br-t-eee fl">
+          <text class="fs-12 m-l-5">合计约 Total：</text>
+          <text class="cr-f40 fw-700">￥{{total_price || 0.00}}</text>
+        </view>
+        <button class="form-submit fr fs-16 bg-main cr-fff l-h-40 ht-40" hover-class="none" formType="submit" loading="{{form_submit_loading}}" disabled="{{form_submit_loading}}">提交 Submit</button>
+      </view>
+    </form>
   </scroll-view>
-
-    
 </view>
